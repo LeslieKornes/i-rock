@@ -4,5 +4,4 @@ class AchievementsController < ApplicationController
 
   end
 
-
 end
