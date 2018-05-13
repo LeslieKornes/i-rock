@@ -10,5 +10,9 @@ feature 'create new achievement' do
     select('Public', from: 'Privacy')
     check('Featured achievement')
     attach_file('Cover image', "#{Rails.root}/spec/fixtures/cover_image.png")
+    click_on('Create Achievement')
+
+    expect(page).to have_content('Achievement has been created')
+    expect(Achievement.last.title).to eq('Read a book')
   end
 end
